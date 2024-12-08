@@ -13,7 +13,8 @@ colorMode.addEventListener('input', function () {
     console.log(theMode)
 })
 
-btn.addEventListener('click', function (e) {
+colorForm.addEventListener('submit', function (e) {
+    e.preventDefault()
     fetch(`https://www.thecolorapi.com/scheme?hex=${theColor}&mode=${theMode}&count=5`)
         .then(response => response.json())
         .then(data => {
