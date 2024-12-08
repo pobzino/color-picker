@@ -1,6 +1,7 @@
 let colorHex = document.getElementById('color-select')
 const colorMode = document.getElementById('scheme')
 const colorForm = document.getElementById('color-form')
+const btn = document.getElementById('btn')
 let theColor = ''.substring(1)
 let theMode = ''
 
@@ -11,8 +12,7 @@ colorMode.addEventListener('input', function () {
     theMode = colorMode.value
 })
 
-colorForm.addEventListener('submit', function (e) {
-    e.preventDefault()
+btn.addEventListener('click', function (e) {
     fetch(`https://www.thecolorapi.com/scheme?hex=${theColor}&mode=${theMode}&count=5`)
         .then(response => response.json())
         .then(data => {
