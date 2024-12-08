@@ -10,6 +10,7 @@ colorHex.addEventListener('input', function () {
 })
 colorMode.addEventListener('input', function () {
     theMode = colorMode.value
+    console.log(theMode)
 })
 
 btn.addEventListener('click', function (e) {
